@@ -1,4 +1,4 @@
-# Java Examples
+# Java Examples for learning Syntax 
 
 Test by invoking each commented function in Main
 
