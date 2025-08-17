@@ -23,41 +23,45 @@ public class ArrayExamples {
         System.out.println("\nFilled");
         printArray(fruits);
     }
+
     public static void printArray(String[] array) {
 
-        for(String s : array) {
-            System.out.print(s+ " ");
+        for (String s : array) {
+            System.out.print(s + " ");
         }
     }
+
     public static void printArray(int[] array) {
 
-        for(int i : array) {
-            System.out.print(i+ " ");
+        for (int i : array) {
+            System.out.print(i + " ");
         }
     }
-    public static void makeArray(){
+
+    public static void makeArray() {
 
         var scanner = new Scanner(System.in);
-        String[] foods ;
+        String[] foods;
 
         System.out.print("How many items?: ");
-        int size =scanner.nextInt();
+        int size = scanner.nextInt();
         scanner.nextLine();
         foods = new String[size];
 
-        for(int i=0; i< foods.length; i++) {
+        for (int i = 0; i < foods.length; i++) {
             System.out.print("Enter a food: ");
-            foods[i]=scanner.nextLine();
-            
+            foods[i] = scanner.nextLine();
+
         }
         scanner.close();
 
         printArray(foods);
 
     }
+
     public static void searchIntArray() {
 
-        int[] numbers  = {23, 43, 545, 23, 54, 32, 56, 87, 34};
+        int[] numbers = {23, 43, 545, 23, 54, 32, 56, 87, 34};
         System.out.println("Your array is...");
         printArray(numbers);
 
@@ -66,10 +70,10 @@ public class ArrayExamples {
         var target = scanner.nextInt();
         var isFound = false;
 
-        for(int i=0; i<numbers.length; i++) {
-            if(target==numbers[i]) {
+        for (int i = 0; i < numbers.length; i++) {
+            if (target == numbers[i]) {
                 System.out.println("Your item " + target + " is found at index " + i);
-                isFound=true;
+                isFound = true;
                 scanner.close();
                 break;
             }
@@ -81,6 +85,7 @@ public class ArrayExamples {
         scanner.close();
 
     }
+
     public static void searchStringArray() {
 
         String[] fruits = {"Apple", "Banana", "Orange", "Pomegranate"};
@@ -93,36 +98,37 @@ public class ArrayExamples {
         System.out.print("What do you want to search ?");
         var target = scanner.nextLine();
 
-            for (int i = 0; i < fruits.length; i++) {
+        for (int i = 0; i < fruits.length; i++) {
 
-                if(fruits[i].equals(target)) {
+            if (fruits[i].equals(target)) {
 
-                    isFound = true;
-                    System.out.println("Your item "+ target + " is found at index " + i);
+                isFound = true;
+                System.out.println("Your item " + target + " is found at index " + i);
 
-                    break;
-                }
-
+                break;
             }
 
-        if(!isFound){
-            System.out.println("Your item "+ target + " is NOT found. ");
+        }
+
+        if (!isFound) {
+            System.out.println("Your item " + target + " is NOT found. ");
         }
         System.out.println("Closing Scanner...");
         scanner.close();
 
     }
+
     public static double average(double... numbers) {
 
-        if(numbers.length==0){
+        if (numbers.length == 0) {
             return 0;
         }
-        double sum =0;
-        for(double num : numbers) {
-            sum+=num;
+        double sum = 0;
+        for (double num : numbers) {
+            sum += num;
         }
 
-        return  sum / numbers.length;
+        return sum / numbers.length;
 
     }
 
@@ -133,13 +139,31 @@ public class ArrayExamples {
         String[] vegetables = {"carrots", "potatoes", "beetroots", "onions"};
         String[] meats = {"beef", "pork", "chicken", "fish"};
 
-        String[][] groceries = {fruits,vegetables,meats};
-        for(String[] foods : groceries ) {
+        String[][] groceries = {fruits, vegetables, meats};
+        for (String[] foods : groceries) {
 
-            for(String food : foods ) {
+            for (String food : foods) {
                 System.out.println(food);
             }
         }
 
     }
+
+    public static void printNumPad() {
+
+        char[][] numPad = {
+                {'1', '2', '3'},
+                {'4', '5', '6'},
+                {'7', '8', '9'},
+                {'*', '0', '#'}};
+
+        for (char[] row : numPad) {
+            for (char chr : row) {
+                System.out.print(chr + "    ");
+            }
+            System.out.println();
+        }
+    }
+
+
 }
