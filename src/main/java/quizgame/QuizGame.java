@@ -72,7 +72,9 @@ public class QuizGame {
         }
         scanner.close();
         System.out.println("********************");
-        System.out.println("YOUR SCORE: " + score);
+        var percentage = ((double) score / (double) questions.length) * 100;
+        System.out.println("YOUR SCORE: " + score + "/" + questions.length + "[ " + percentage + "%]");
+        System.out.println((percentage >= 80) ? " PASS " : " FAIL ");
         System.out.println("********************");
 
     }
